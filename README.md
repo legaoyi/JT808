@@ -60,4 +60,10 @@ spring.activemq.password=admin
 2、elink-gps-storer  为上行消息处理应用程序，开发者可根据自身业务进行二次开发
 
 
-      
+**软件运行** 
+
+1、window：双击bin/startup.bat文件即可启动；
+
+2、linux：使用命令启动（注：启动前先赋予该文件startup.sh执行权限，chmod 777 startup.sh）： nohup ./bin/startup.sh & 
+
+
