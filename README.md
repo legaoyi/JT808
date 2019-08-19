@@ -67,3 +67,12 @@ spring.activemq.password=admin
 2、linux：使用命令启动（注：启动前先赋予该文件startup.sh执行权限，chmod 777 startup.sh）： nohup ./bin/startup.sh & 
 
 
+本软件为免费版本，觉得好用请支持正版软件，后续会陆续退出更多免费的版本，敬请关注，谢谢！    
+
+
+    
+
+
+
+
+
