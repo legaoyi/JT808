@@ -56,13 +56,13 @@ spring.activemq.password=admin
      
 *************************************************************
 
-注：server.tcp.port=3005 该配置为车载终端连接的TCP端口，操作系统防火墙需要开放该端口     
+注：server.tcp.port=6030 该配置为车载终端连接的TCP端口，操作系统防火墙需要开放该端口     
 
 **软件模块** 
 
-1、elink-gps-gateway 为协议网关中间件，车载终端连接该软件程序     
+1、elink-iov-message-gateway 为协议网关中间件，车载终端连接该软件程序     
 
-2、elink-gps-storer  为上行消息处理应用程序，开发者可根据自身业务进行二次开发
+2、elink-iov-message-processor  为上行消息处理应用程序，开发者可根据自身业务进行二次开发
 
 
 **软件运行** 
