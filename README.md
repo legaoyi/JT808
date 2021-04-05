@@ -8,8 +8,18 @@
 1、软件绿色免安装      
 2、软件架构特点详情请参考：http://www.legaoyi.com/elink-jt808-gateway.html          
 3、软件平台演示地址：http://iov.legaoyi.com        
-4、技术支持QQ：78772895 574360187（QQ群）        
-     
+4、技术支持QQ：78772895 574360187（QQ群）    
+5、若不想编译打包源码，可直接下载打包好的应用程序，下载地址：https://www.legaoyi.com/software.html  
+
+**设备模拟器** 
+可配合车载设备模拟器进行测试跑通部标808协议整个流程，下载地址：https://www.legaoyi.com/software.html          
+设备模拟器支持协议：          
+jT/T 808 2011----模拟0200消息          
+jT/T 808 2013----模拟0200、0704、0702等消息          
+jT/T 808 1078----模拟音视频、音频、对讲等功能          
+苏标 T/JSATL ----模拟ADAS等告警以及告警附件上传功能          
+
+
 **版本对比** 
 
 |特性|免费版|旗舰版|说明|
@@ -42,7 +52,10 @@
 - ActiveMQ环境     
 平台的运行依赖ActiveMQ环境，ActiveMQ安装最新版本    
 
-     
+
+**程序打包编译** 
+maven环境中运行：mvn package appassembler:assemble    
+
 **配置文件** 
 
 软件conf目前下的所有配置文件都必须保留，不能删除，否则将会导致软件无法运行。使用软件时，请根据实际情况修改conf目录下的配置文件application.properties中的activemq配置部分，如下：
