@@ -53,7 +53,7 @@ jT/T 808 1078----模拟音视频、音频、对讲等功能
 平台的运行依赖ActiveMQ环境，ActiveMQ安装最新版本    
 
 
-**程序打包编译** 
+**程序打包编译**     
 maven环境中运行：mvn package appassembler:assemble    
 
 **配置文件** 
