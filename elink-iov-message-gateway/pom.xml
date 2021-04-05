@@ -1,0 +1,169 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.legaoyi.iov</groupId>
+	<version>1.0.0.RELEASE</version>
+	<artifactId>elink-iov-message-gateway</artifactId>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.6.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+	</properties>
+	<dependencies>
+		<!-- activemq自动配置依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
+		</dependency>
+
+		<!-- 连接池依赖 -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-pool</artifactId>
+		</dependency>
+
+		<!-- 如果springboot是2.x.x的版本如果启用连接池（spring.activemq.pool.enabled=true），就必须引入这个依赖，否则启动时会报错，提示找不到JmsMessagingTemplate 
+			springboot是1.5.x的版本就不需要引入， 这是因为springboot1.5.x使用的是org.apache.activemq.pool.PooledConnectionFactory， 
+			而springboot2.x.x时候用的org.messaginghub.pooled.jms.JmsPoolConnectionFactory， 
+			可以通过源码查看： org.springframework.boot.autoconfigure.jms.activemq.ActiveMQConnectionFactoryConfiguration 
+			: 负责初始化ConnectionFactory org.springframework.boot.autoconfigure.jms.JmsAutoConfiguration 
+			: 负责初始化JmsMessagingTemplate -->
+		<dependency>
+			<groupId>org.messaginghub</groupId>
+			<artifactId>pooled-jms</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.mina</groupId>
+			<artifactId>mina-core</artifactId>
+			<version>2.1.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.legaoyi.iov</groupId>
+			<version>1.0.0.RELEASE</version>
+			<artifactId>elink-iov-message-gateway-core</artifactId>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/elink-iov-message-gateway-core-1.0.0.RELEASE.jar</systemPath>
+		</dependency>
+	</dependencies>
+
+	<build>
+	    <resources>
+		   <resource>
+		        <directory>${project.basedir}/lib</directory>
+		        <targetPath>${project.build.directory}/elink-iov-message-gateway/lib</targetPath>
+		        <includes>
+		            <include>**/*.jar</include>
+		        </includes>
+		    </resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-plugin-plugin</artifactId>
+				<version>3.5.2</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>*.xml</exclude>
+						<exclude>*.properties</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- 运行maven命令 :mvn package appassembler:assemble 
+				    configurationDirectory：生成配置文件路径 
+					configurationSourceDirectory：配置文件原路径，默认为src/main/config 
+					assembleDirectory:整体包目录 
+					extraJvmArguments：jvm参数 
+					binFileExtensions：生成脚本的后缀 
+					platforms：生成哪几种平台 
+					repositoryName：依赖包目录，默认repo 
+					programs：这个必须参数，启动的主class -->
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>appassembler-maven-plugin</artifactId>
+				<version>2.0.0</version>
+				<configuration>
+					<configurationDirectory>conf</configurationDirectory>
+					<configurationSourceDirectory>src/main/resources</configurationSourceDirectory>
+					<copyConfigurationDirectory>true</copyConfigurationDirectory>
+					<includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
+					<assembleDirectory>${project.build.directory}/elink-iov-message-gateway</assembleDirectory>
+					<extraJvmArguments>-Xms512m</extraJvmArguments>
+					<binFileExtensions>
+						<unix>.sh</unix>
+					</binFileExtensions>
+					<platforms>
+						<platform>windows</platform>
+						<platform>unix</platform>
+					</platforms>
+					<repositoryLayout>flat</repositoryLayout>
+					<repositoryName>lib</repositoryName>
+					<useWildcardClassPath>true</useWildcardClassPath>
+					<programs>
+						<program>
+							<mainClass>com.legaoyi.Startup</mainClass>
+						</program>
+					</programs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<url>http://repo.spring.io/snapshot</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<url>http://repo.spring.io/milestone</url>
+		</pluginRepository>
+	</pluginRepositories>
+</project>
+

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="stdout"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%d{yyyy/MM/dd-HH:mm:ss.SSS}]-%msg%n
+			</pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+	<appender name="fileAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>../logs/elink-iov-message-gateway.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>../logs/elink-iov-message-gateway-%d{yyyy-MM-dd}.%i.log.gz
+			</fileNamePattern>
+			<maxFileSize>500MB</maxFileSize>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy/MM/dd-HH:mm:ss.SSS}]-[%level]-[%thread]-[%class:%line]-%msg%n
+			</pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+	<appender name="errorAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<file>../logs/error.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>../logs/error-%d{yyyy-MM-dd}.%i.log.gz
+			</fileNamePattern>
+			<maxFileSize>500MB</maxFileSize>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy/MM/dd-HH:mm:ss.SSS}]-[%level]-[%thread]-[%class:%line]-%msg%n
+			</pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+	<appender name="mqUpstreamAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<file>../logs/upstream.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>../logs/upstream-%d{yyyy-MM-dd}.%i.log.gz
+			</fileNamePattern>
+			<maxFileSize>500MB</maxFileSize>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy/MM/dd-HH:mm:ss.SSS}]-%msg%n </pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+	<appender name="mqDownstreamAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<file>../logs/downstream.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>../logs/downstream-%d{yyyy-MM-dd}.%i.log.gz
+			</fileNamePattern>
+			<maxFileSize>500MB</maxFileSize>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy/MM/dd-HH:mm:ss.SSS}]-%msg%n </pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+	<appender name="onlineAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>WARN</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<file>../logs/online.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>../logs/online-%d{yyyy-MM-dd}.%i.log.gz
+			</fileNamePattern>
+			<maxFileSize>500MB</maxFileSize>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy/MM/dd-HH:mm:ss.SSS}]-%msg%n </pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+	<appender name="inboundAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<file>../logs/inbound.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>../logs/inbound-%d{yyyy-MM-dd}.%i.log.gz
+			</fileNamePattern>
+			<maxFileSize>500MB</maxFileSize>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy/MM/dd-HH:mm:ss.SSS}]-%msg%n </pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+	<appender name="outboundAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>INFO</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<file>../logs/outbound.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>../logs/outbound-%d{yyyy-MM-dd}.%i.log.gz
+			</fileNamePattern>
+			<maxFileSize>500MB</maxFileSize>
+			<maxHistory>7</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy/MM/dd-HH:mm:ss.SSS}]-%msg%n </pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+	<logger name="org.apache" level="ERROR" />
+	<logger name="org.springframework" level="ERROR" />
+
+	<logger
+		name="com.legaoyi.iov.protocol.server.mq.activemq.ActiveMqListener"
+		level="INFO" additivity="false">
+		<appender-ref ref="mqDownstreamAppender" />
+		<appender-ref ref="errorAppender" />
+	</logger>
+
+	<logger
+		name="com.legaoyi.iov.protocol.server.mq.activemq.ActiveMqProducer"
+		level="INFO" additivity="false">
+		<appender-ref ref="mqUpstreamAppender" />
+		<appender-ref ref="errorAppender" />
+	</logger>
+
+	<!-- 设备上行消息日志 -->
+	<logger name="com.legaoyi.iov.protocol.server.CodecDecoder"
+		level="INFO" additivity="false">
+		<appender-ref ref="inboundAppender" />
+		<appender-ref ref="errorAppender" />
+	</logger>
+
+	<!-- 设备下行消息日志 -->
+	<logger name="com.legaoyi.iov.protocol.server.CodecEncoder"
+		level="INFO" additivity="false">
+		<appender-ref ref="outboundAppender" />
+		<appender-ref ref="errorAppender" />
+	</logger>
+
+	<!-- 设备上下线日志 -->
+	<logger name="com.legaoyi.iov.protocol.server.ServerIoHandler"
+		level="WARN" additivity="false">
+		<appender-ref ref="onlineAppender" />
+		<appender-ref ref="errorAppender" />
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="errorAppender" />
+		<appender-ref ref="fileAppender" />
+		<appender-ref ref="stdout" />
+	</root>
+</configuration>  
