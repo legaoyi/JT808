@@ -87,8 +87,15 @@ spring.activemq.password=admin
 
 本软件为免费版本，觉得好用请支持正版软件，后续会陆续退出更多免费的版本，敬请关注，谢谢！    
 
+**捐助** 
+   
+若喜欢，请支持，谢谢！
 
-    
+** 微信**  
+![image](https://www.legaoyi.com/images/wechat.jpg) 
+
+** 支付宝**  
+![image](https://www.legaoyi.com/images/taobao.jpg) 
 
 
 
