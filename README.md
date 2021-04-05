@@ -91,11 +91,8 @@ spring.activemq.password=admin
    
 若喜欢，请支持，谢谢！
 
-** 微信**  
-![image](https://www.legaoyi.com/images/wechat.jpg) 
+![image](https://www.legaoyi.com/images/pay.png) 
 
-** 支付宝**  
-![image](https://www.legaoyi.com/images/taobao.jpg) 
 
 
 
