@@ -7,7 +7,7 @@
 
 1、软件绿色免安装      
 2、软件架构特点详情请参考：https://www.legaoyi.com/elink-jt808-gateway.html          
-3、软件平台演示地址：https://iov.legaoyi.com        
+3、软件平台演示地址：https://iov.legaoyi.com (点击体验账号登录即可)        
 4、技术支持QQ：78772895 574360187（QQ群）    
 5、若不想编译打包源码，可直接下载打包好的应用程序，下载地址：https://www.legaoyi.com/software.html  
 
