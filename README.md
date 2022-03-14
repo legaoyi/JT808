@@ -81,6 +81,7 @@ spring.activemq.password=admin
 
 2、elink-iov-message-processor  为上行消息处理应用程序，开发者可根据自身业务进行二次开发
 
+3、elink-iov-message-processor-pro 为旗舰版协议网关上行消息处理应用程序，开发者可根据自身业务进行二次开发
 
 **软件运行** 
 
