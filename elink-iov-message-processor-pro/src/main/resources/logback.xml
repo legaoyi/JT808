@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%d{yyyy/MM/dd-HH:mm:ss.SSS}]-[%level]-[%thread]-[%class:%line]-%msg%n </pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+	<appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>../logs/message-storer.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
+		        <fileNamePattern>../logs/message-storer-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern> 
+		        <maxFileSize>500MB</maxFileSize>  
+		        <maxHistory>7</maxHistory>  
+   		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy/MM/dd-HH:mm:ss.SSS}]-[%level]-[%thread]-[%class:%line]-%msg%n </pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+	<appender name="rabbitmqAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+		<file>../logs/rabbitmq.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
+		        <fileNamePattern>../logs/rabbitmq-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern> 
+		        <maxFileSize>500MB</maxFileSize>  
+		        <maxHistory>7</maxHistory>  
+   		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy/MM/dd-HH:mm:ss.SSS}]-%msg%n </pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+	</appender>
+
+    <logger name="com.legaoyi.rabbitmq" level="INFO" additivity="false">
+        <appender-ref ref="rabbitmqAppender" />
+    </logger>
+ 
+ 	<logger name="org.springframework" level="ERROR" />
+	<root level="info">
+		<appender-ref ref="fileAppender" />
+		<appender-ref ref="stdout" />
+	</root>
+</configuration>  
