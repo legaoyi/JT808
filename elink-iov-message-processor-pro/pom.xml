@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.6.RELEASE</version>
+		<version>2.1.18.RELEASE</version>
 		<relativePath />
 	</parent>
 
@@ -51,6 +51,19 @@
 			<version>3.0.0.RELEASE</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/lib/elink-rabbitmq-support-3.0.0.RELEASE.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.legaoyi</groupId>
+			<artifactId>elink-kafka-support</artifactId>
+			<version>3.0.0.RELEASE</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/elink-kafka-support-3.0.0.RELEASE.jar</systemPath>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
 		</dependency>
 
 		<dependency>
