@@ -57,7 +57,7 @@ public class UpstreamMessageHandler extends MessageHandler {
 
                         Map<?, ?> device = null;// 查询设备信息，todo
 
-                        String version = (String) messageHeader.get(Constants.MAP_KEY_VERSION);// todo
+                        String version = (String) messageHeader.get(Constants.MAP_KEY_PROTOCOL_VERSION);// todo
                         /**
                          * if (device != null) { message.putExtAttribute(Constants.MAP_KEY_DEVICE, device); version = (String)
                          * device.get(Constants.MAP_KEY_VERSION); } else { version = (String) messageHeader.get(Constants.MAP_KEY_VERSION); version =

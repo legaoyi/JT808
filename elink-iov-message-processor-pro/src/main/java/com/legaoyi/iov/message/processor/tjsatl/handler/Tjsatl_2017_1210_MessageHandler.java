@@ -13,7 +13,7 @@ import com.legaoyi.iov.message.processor.handler.MessageHandler;
 import com.legaoyi.iov.message.processor.util.Constants;
 import com.legaoyi.iov.message.processor.util.ExchangeMessage;
 
-@Component(Constants.ELINK_MESSAGE_PROCESSOR_BEAN_PREFIX + "tjsalt_tjsatl_2017_1210" + Constants.ELINK_MESSAGE_PROCESSOR_MESSAGE_HANDLER_BEAN_SUFFIX)
+@Component(Constants.ELINK_MESSAGE_PROCESSOR_BEAN_PREFIX + "tjsatl_tjsatl_2017_1210" + Constants.ELINK_MESSAGE_PROCESSOR_MESSAGE_HANDLER_BEAN_SUFFIX)
 public class Tjsatl_2017_1210_MessageHandler extends MessageHandler {
 
     private static final Logger logger = LoggerFactory.getLogger(Tjsatl_2017_1210_MessageHandler.class);
@@ -43,7 +43,7 @@ public class Tjsatl_2017_1210_MessageHandler extends MessageHandler {
         Map<String, Object> respMessageHeader = new HashMap<String, Object>();
         respMessageHeader.put(Constants.MAP_KEY_DEVICE_SN, messageHeader.get(Constants.MAP_KEY_DEVICE_SN));
         respMessageHeader.put(Constants.MAP_KEY_PROTOCOL, messageHeader.get(Constants.MAP_KEY_PROTOCOL));
-        respMessageHeader.put(Constants.MAP_KEY_VERSION, messageHeader.get(Constants.MAP_KEY_VERSION));
+        respMessageHeader.put(Constants.MAP_KEY_PROTOCOL_VERSION, messageHeader.get(Constants.MAP_KEY_PROTOCOL_VERSION));
         respMessageHeader.put(Constants.MAP_KEY_MESSAGE_ID, "8001");
 
         Map<String, Object> respMessageBody = new HashMap<String, Object>();

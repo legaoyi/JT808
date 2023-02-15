@@ -18,8 +18,31 @@
        <alias alias="elink_jt808_1078_2013_0100_messageHandler"  name="elink_jt808_2011_0100_messageHandler"/>
        <alias alias="elink_jt808_1078_2013_0102_messageHandler"  name="elink_jt808_2011_0102_messageHandler"/>
        <alias alias="elink_jt808_1078_2013_0801_messageHandler"  name="elink_jt808_2011_0801_messageHandler"/>
+       <alias alias="elink_jt808_1078_2013_0200_messageHandler"  name="elink_jt808_2011_0200_messageHandler"/>
+       <alias alias="elink_jt808_1078_2013_0704_messageHandler"  name="elink_jt808_2013_0704_messageHandler"/>
+       
+       
+       <alias alias="elink_jt808_2015_0100_messageHandler"  name="elink_jt808_2011_0100_messageHandler"/>
+       <alias alias="elink_jt808_2015_0102_messageHandler"  name="elink_jt808_2011_0102_messageHandler"/>
+       <alias alias="elink_jt808_2015_0801_messageHandler"  name="elink_jt808_2011_0801_messageHandler"/>
+       <alias alias="elink_jt808_2015_0200_messageHandler"  name="elink_jt808_2011_0200_messageHandler"/>
+       <alias alias="elink_jt808_2015_0704_messageHandler"  name="elink_jt808_2013_0704_messageHandler"/>
+       
        
        <alias alias="elink_jt808_tjsatl_2017_0100_messageHandler"  name="elink_jt808_2011_0100_messageHandler"/>
        <alias alias="elink_jt808_tjsatl_2017_0102_messageHandler"  name="elink_jt808_2011_0102_messageHandler"/>
        <alias alias="elink_jt808_tjsatl_2017_0801_messageHandler"  name="elink_jt808_2011_0801_messageHandler"/>
+       
+       
+       <alias alias="elink_jt808_2019_2019_0200_messageHandler"  name="elink_jt808_2011_0200_messageHandler"/>
+       <alias alias="elink_jt808_2019_2019_0704_messageHandler"  name="elink_jt808_2013_0704_messageHandler"/>
+       <alias alias="elink_jt808_2019_2019_0801_messageHandler"  name="elink_jt808_2011_0801_messageHandler"/>
+       
+       <alias alias="elink_jt808_2019_tgdrta_2020_0100_messageHandler"  name="elink_jt808_2019_2019_0100_messageHandler"/>
+       <alias alias="elink_jt808_2019_tgdrta_2020_0102_messageHandler"  name="elink_jt808_2019_2019_0102_messageHandler"/>
+       <alias alias="elink_jt808_2019_tgdrta_2020_0200_messageHandler"  name="elink_jt808_tjsatl_2017_0200_messageHandler"/>
+       <alias alias="elink_jt808_2019_tgdrta_2020_0704_messageHandler"  name="elink_jt808_tjsatl_2017_0704_messageHandler"/>
+       <alias alias="elink_jt808_2019_tgdrta_2020_0801_messageHandler"  name="elink_jt808_2011_0801_messageHandler"/>
+       <alias alias="elink_tgdrta_tgdrta_2020_1210_messageHandler"  name="elink_tjsatl_tjsatl_2017_1210_messageHandler"/>
+       <alias alias="elink_tgdrta_tgdrta_2020_1212_messageHandler"  name="elink_tjsatl_tjsatl_2017_1212_messageHandler"/>
 </beans>

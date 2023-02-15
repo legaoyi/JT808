@@ -13,13 +13,13 @@ import com.legaoyi.iov.message.processor.handler.MessageHandler;
 import com.legaoyi.iov.message.processor.util.Constants;
 import com.legaoyi.iov.message.processor.util.ExchangeMessage;
 
-@Component(Constants.ELINK_MESSAGE_PROCESSOR_BEAN_PREFIX + "jt808_2011_0100" + Constants.ELINK_MESSAGE_PROCESSOR_MESSAGE_HANDLER_BEAN_SUFFIX)
-public class Jt808_2011_0100_MessageHandler extends MessageHandler {
+@Component(Constants.ELINK_MESSAGE_PROCESSOR_BEAN_PREFIX + "jt808_2019_2019_0100" + Constants.ELINK_MESSAGE_PROCESSOR_MESSAGE_HANDLER_BEAN_SUFFIX)
+public class Jt808_2019_0100_MessageHandler extends MessageHandler {
 
-    private static final Logger logger = LoggerFactory.getLogger(Jt808_2011_0100_MessageHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(Jt808_2019_0100_MessageHandler.class);
 
     @Autowired
-    public Jt808_2011_0100_MessageHandler(@Qualifier("downstreamMessageSendHandler") MessageHandler handler) {
+    public Jt808_2019_0100_MessageHandler(@Qualifier("downstreamMessageSendHandler") MessageHandler handler) {
         setSuccessor(handler);
     }
 
@@ -41,8 +41,8 @@ public class Jt808_2011_0100_MessageHandler extends MessageHandler {
         // 由于各个设备厂商对终端id理解不一样，暂时只校验sim卡号
         Map<?, ?> device = (Map<?, ?>) message.getExtAttribute(Constants.MAP_KEY_DEVICE);
 
-        String protocol = (String)messageHeader.get(Constants.MAP_KEY_PROTOCOL);//"jt808";// 默认808协议，todo
-        String version = "tjsatl_2017";// 可选值：2011,2013,1078_2011,1078_2013,tjsatl_2017；默认苏标，根据实际情况选择，todo
+        String protocol = (String)messageHeader.get(Constants.MAP_KEY_PROTOCOL);//"jt808_2019";// 默认808协议，todo
+        String version = "tgdrta_2020";// 可选值：2019,1078_2019,tgdrta_2020；默认月标，根据实际情况选择，todo
         
         int result = 0;// 默认注册成功
         if (device != null) {
@@ -63,8 +63,8 @@ public class Jt808_2011_0100_MessageHandler extends MessageHandler {
         Map<String, Object> respMessageHeader = new HashMap<String, Object>();
         respMessageHeader.put(Constants.MAP_KEY_DEVICE_SN, deviceSn);
         if (device != null) {
-            //protocol = "jt808";// 默认808协议，todo
-            //version = "tjsatl_2017";// 可选值：2011,2013,1078_2011,1078_2013,tjsatl_2017；默认苏标，根据实际情况选择，todo
+            //protocol = "jt808_2019";// 默认808协议，todo
+            //version = "tgdrta_2020";// 可选值：2011,2013,1078_2011,1078_2013,tjsatl_2017；默认苏标，根据实际情况选择，todo
         } 
         
         respMessageHeader.put(Constants.MAP_KEY_PROTOCOL, protocol);

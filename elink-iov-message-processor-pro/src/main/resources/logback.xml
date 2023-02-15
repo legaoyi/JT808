@@ -8,9 +8,9 @@
 	</appender>
 
 	<appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>../logs/message-storer.log</file>
+		<file>../logs/elink-iov-message-processor.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
-		        <fileNamePattern>../logs/message-storer-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern> 
+		        <fileNamePattern>../logs/elink-iov-message-processor-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern> 
 		        <maxFileSize>500MB</maxFileSize>  
 		        <maxHistory>7</maxHistory>  
    		</rollingPolicy>
@@ -20,13 +20,13 @@
 		</encoder>
 	</appender>
 
-	<appender name="rabbitmqAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	<appender name="mqAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
 	    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>INFO</level>
         </filter>
-		<file>../logs/rabbitmq.log</file>
+		<file>../logs/update-stream-message.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">  
-		        <fileNamePattern>../logs/rabbitmq-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern> 
+		        <fileNamePattern>../logs/update-stream-message-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern> 
 		        <maxFileSize>500MB</maxFileSize>  
 		        <maxHistory>7</maxHistory>  
    		</rollingPolicy>
@@ -36,8 +36,8 @@
 		</encoder>
 	</appender>
 
-    <logger name="com.legaoyi.rabbitmq" level="INFO" additivity="false">
-        <appender-ref ref="rabbitmqAppender" />
+    <logger name="com.legaoyi.iov.message.processor.mq" level="INFO" additivity="false">
+        <appender-ref ref="mqAppender" />
     </logger>
  
  	<logger name="org.springframework" level="ERROR" />

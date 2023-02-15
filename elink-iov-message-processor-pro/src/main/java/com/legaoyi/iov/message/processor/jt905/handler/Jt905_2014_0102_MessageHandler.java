@@ -43,7 +43,7 @@ public class Jt905_2014_0102_MessageHandler extends MessageHandler {
         // 默认成功
         int result = 0;
         String protocol = (String)messageHeader.get(Constants.MAP_KEY_PROTOCOL);
-        String version =  (String)messageHeader.get(Constants.MAP_KEY_VERSION);
+        String version =  (String)messageHeader.get(Constants.MAP_KEY_PROTOCOL_VERSION);
 
         Map<String, Object> resp = new HashMap<String, Object>();
         resp.put("result", result);// 鉴权结果,0是通过鉴权,1鉴权失败
@@ -60,16 +60,17 @@ public class Jt905_2014_0102_MessageHandler extends MessageHandler {
         Map<String, Object> respMessageHeader = new HashMap<String, Object>();
         respMessageHeader.put(Constants.MAP_KEY_DEVICE_SN, deviceSn);
         respMessageHeader.put(Constants.MAP_KEY_PROTOCOL, protocol);
-        respMessageHeader.put(Constants.MAP_KEY_VERSION, version);
+        respMessageHeader.put(Constants.MAP_KEY_PROTOCOL_VERSION, version);
         respMessageHeader.put(Constants.MAP_KEY_MESSAGE_ID, "8001");
 
-        Map<String, Object> respMessageBody = new HashMap<String, Object>();
-        respMessageBody.put(Constants.MAP_KEY_MESSAGE_SEQ, messageHeader.get(Constants.MAP_KEY_MESSAGE_SEQ));
-        respMessageBody.put(Constants.MAP_KEY_MESSAGE_ID, messageHeader.get(Constants.MAP_KEY_MESSAGE_ID));
-        respMessageBody.put("result", result);
+        //不需要应答终端，不传messageBody
+        //Map<String, Object> respMessageBody = new HashMap<String, Object>();
+        //respMessageBody.put(Constants.MAP_KEY_MESSAGE_SEQ, messageHeader.get(Constants.MAP_KEY_MESSAGE_SEQ));
+        //respMessageBody.put(Constants.MAP_KEY_MESSAGE_ID, messageHeader.get(Constants.MAP_KEY_MESSAGE_ID));
+        //respMessageBody.put("result", result);
 
         resp.put(Constants.MAP_KEY_MESSAGE_HEADER, respMessageHeader);
-        resp.put(Constants.MAP_KEY_MESSAGE_BODY, respMessageBody);
+        //resp.put(Constants.MAP_KEY_MESSAGE_BODY, respMessageBody);
 
         // 注入下发终端消息处理链
         ExchangeMessage exchangeMessage = new ExchangeMessage(ExchangeMessage.MESSAGEID_PLATFORM_AUTH_RESP_MESSAGE, resp, null, message.getGatewayId());

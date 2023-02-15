@@ -11,11 +11,11 @@ import com.legaoyi.iov.message.processor.handler.MessageHandler;
 import com.legaoyi.iov.message.processor.util.Constants;
 import com.legaoyi.iov.message.processor.util.ExchangeMessage;
 
-@Component(Constants.ELINK_MESSAGE_PROCESSOR_BEAN_PREFIX + "gb32960_2016_01" + Constants.ELINK_MESSAGE_PROCESSOR_MESSAGE_HANDLER_BEAN_SUFFIX)
-public class Gb32960_2016_01_MessageHandler extends MessageHandler {
+@Component(Constants.ELINK_MESSAGE_PROCESSOR_BEAN_PREFIX + "gb32960_2016_05" + Constants.ELINK_MESSAGE_PROCESSOR_MESSAGE_HANDLER_BEAN_SUFFIX)
+public class Gb32960_2016_05_MessageHandler extends MessageHandler {
 
     @Autowired
-    public Gb32960_2016_01_MessageHandler(@Qualifier("downstreamMessageSendHandler") MessageHandler handler) {
+    public Gb32960_2016_05_MessageHandler(@Qualifier("downstreamMessageSendHandler") MessageHandler handler) {
         setSuccessor(handler);
     }
 
@@ -50,7 +50,7 @@ public class Gb32960_2016_01_MessageHandler extends MessageHandler {
         respMessageHeader.put(Constants.MAP_KEY_DEVICE_SN, messageHeader.get(Constants.MAP_KEY_DEVICE_SN));
         respMessageHeader.put(Constants.MAP_KEY_PROTOCOL, protocol);
         respMessageHeader.put(Constants.MAP_KEY_PROTOCOL_VERSION, version);
-        respMessageHeader.put(Constants.MAP_KEY_MESSAGE_ID, "01");
+        respMessageHeader.put(Constants.MAP_KEY_MESSAGE_ID, "05");
 
         // 应答标志，flag=1
         Map<String, Object> attributes = new HashMap<String, Object>();
