@@ -39,8 +39,8 @@ public abstract class GpsMessageHandler extends MessageHandler {
                 Map<String, Object> respMessageBody = new HashMap<String, Object>();
                 
                 respMessageBody.put("ip", "127.0.0.1");//附件服务器 IP地址，todo
-                respMessageBody.put("tcpPort", 6031);//附件服务器端口tcp端口号，todo
-                //respMessageBody.put("tcpPort", 6035);
+                //respMessageBody.put("tcpPort", 6031);//附件服务器端口tcp端口号，todo
+                respMessageBody.put("tcpPort", 6035);
                 respMessageBody.put("udpPort", 0);//附件服务器端口udp端口号，todo
                 
                 respMessageBody.put("terminalId", alarm.get("terminalId"));
