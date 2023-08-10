@@ -29,6 +29,11 @@
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-pool</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
 
 		<!-- 如果springboot是2.x.x的版本如果启用连接池（spring.activemq.pool.enabled=true），就必须引入这个依赖，否则启动时会报错，提示找不到JmsMessagingTemplate 
 			springboot是1.5.x的版本就不需要引入， 这是因为springboot1.5.x使用的是org.apache.activemq.pool.PooledConnectionFactory， 
