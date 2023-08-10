@@ -1,0 +1,271 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, input, button,
+	textarea, p, blockquote, th, td, form, pre {
+	margin: 0;
+	padding: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	color: #333;
+}
+
+pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-wrap: break-word;
+}
+
+body {
+	-webkit-font-feature-settings: 'kern' 1;
+	-moz-font-feature-settings: 'kern' 1;
+	-o-font-feature-settings: 'kern' 1;
+	text-rendering: geometricPrecision;
+	font-family: "Microsoft YaHei";
+}
+
+/** ¹ö¶¯Ìõ **/
+::-webkit-scrollbar {
+	width: 5px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-button:vertical {
+	display: none;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+	background-color: rgba(14, 148, 234, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 0;
+	background-color: rgba(0, 0, 0, .3);
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+	background-color: rgba(0, 0, 0, .35);
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+	background-color: rgba(0, 0, 0, .38);
+}
+
+.container-flex {
+	width: 100%;
+	height: 100%;
+	background-color: #081832;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	outline: none;
+}
+
+.box-left {
+	width: 28%;
+	height: 100%;
+	background: url(../img/line_img.png) top right repeat-y;
+}
+
+.box-center {
+	width: 44%;
+	height: 100%;
+}
+
+.box-right {
+	width: 28%;
+	height: 100%;
+	background: url(../img/line_img.png) top left repeat-y;
+}
+
+.left-top {
+	width: 100%;
+	height: 20%;
+	position: relative;
+}
+
+.left-center {
+	width: 100%;
+	height: 38%;
+	position: relative;
+}
+
+.left-bottom {
+	width: 100%;
+	height: 42%;
+	position: relative;
+}
+
+.left-top>.current-num {
+	width: 4.9rem;
+	height: 1.6rem;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: url(../img/border_bg01.png) top left no-repeat;
+	background-size: 100% 100%;
+}
+
+.current-num>div {
+	width: 100%;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	text-align: center;
+	background: url(../img/title_bg01.png) center center no-repeat;
+	font-size: 0.25rem;
+	color: #0e94ea;
+	background-size: 1.8rem 0.25rem;
+	font-weight: 600;
+}
+
+.current-num>p {
+	font-size: 0.25rem;
+	text-align: center;
+	color: white;
+}
+
+.title-box {
+	width: 4.9rem;
+	height: 0.42rem;
+	background: url(../img/box_title.png) top left no-repeat;
+	background-size: 100% 100%;
+	margin: auto;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	position: relative;
+}
+
+.title-box>h6, .title-box>p {
+	font-size: 0.2rem;
+	color: white;
+	height: 0.42rem;
+	line-height: 0.42rem;
+	margin-left: 0.4rem;
+}
+
+.title-box>p>span {
+	cursor: pointer;
+	color: rgba(255, 255, 255, .6);
+}
+
+.title-box>p>span.active {
+	color: rgba(255, 255, 255, 1);
+}
+
+.chart-box {
+	position: absolute;
+	top: 0.4rem;
+	bottom: 0;
+	width: 95%;
+	margin: auto;
+	left: 0;
+	right: 0;
+	height: auto;
+}
+
+.pie-chart>div {
+	float: left;
+	width: 50%;
+	height: 100%;
+	position: relative;
+}
+
+.center-top {
+	width: 100%;
+	height: 8.8%;
+	position: relative;
+	top: 0;
+	left: 0;
+	background: url(../img/title_border.png) bottom center no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.center-center {
+	width: 100%;
+	height: 72.9%;
+	position: relative;
+}
+
+.center-bottom {
+	width: 100%;
+	height: 18.3%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.message-box {
+	width: 10rem;
+	height: 1.2rem;
+	border: 1px solid #0E94EA;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+}
+
+.message-box>p{
+	color:#ffffff;
+	font-size:0.15rem;
+}
+
+.center-top>h1 {
+	color: #cdddf7;
+	font-size: 0.35rem;
+	font-weight: 900;
+	letter-spacing: 5px;
+}
+
+.right-top {
+	width: 100%;
+	height: 34%;
+	box-sizing: border-box;
+	padding-top: 0.2rem;
+	position: relative;
+}
+
+.right-center {
+	width: 100%;
+	height: 33%;
+	position: relative;
+}
+
+.right-bottom {
+	width: 100%;
+	height: 33%;
+	position: relative;
+}
+
+.right-top>.chart-box {
+	top: 1rem;
+}
+
+.right-top>.nav {
+	width: 4.9rem;
+	height: 0.25rem;
+	line-height:0.25rem;
+	margin: auto;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	position: relative;
+}
+
+.right-top>.nav>.time{
+	width:75%;
+	color: #ffffff;
+	font-size: 0.16rem;
+}
+
+.right-top>.nav>.bar{
+	width:25%;
+	text-align: right;
+}

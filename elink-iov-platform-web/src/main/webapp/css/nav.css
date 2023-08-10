@@ -1,0 +1,130 @@
+
+
+#main-nav .nav{
+	width: 100%;
+}
+
+#main-nav {
+	width: 100%;
+}
+
+/* #main-nav .nav>li>a:focus{ */
+/* 	 text-decoration:none; */
+/* 	 background-color:#081832; */
+/* } */
+
+/* #main-nav .nav>li>a:hover{ */
+/* 	 text-decoration:none; */
+/* 	 background-color:#008080; */
+/* } */
+
+
+.main-nav-opened #main-nav .navigation>.nav>li i.angle-down,
+	.main-nav-opened #main-nav .navigation>.nav>li span {
+	display: inline !important;
+}
+
+.main-nav-closed #main-nav .navigation>.nav>li>.nav {
+	display: none !important;
+}
+
+.main-nav-closed #main-nav .navigation>.nav>li>.nav.in {
+	display: none;
+}
+
+.main-nav-closed #main-nav .navigation>.nav>li i.angle-down,
+	.main-nav-closed #main-nav .navigation>.nav>li span {
+	display: none;
+}
+
+#main-nav .navigation {
+	width: 100%;
+}
+
+#main-nav .navigation .nav {
+	margin-bottom: 0;
+}
+
+#main-nav .navigation>.nav {
+	border-bottom: 1px solid #4b8df8;
+	background: #081832;
+}
+
+#main-nav .navigation>.nav>li {
+	position: relative;
+	display: block;
+}
+
+#main-nav .navigation>.nav>li>a {
+	height: 40px;
+	display: block;
+	line-height: 45px;
+	padding: 0 10px;
+	border-top: 1px solid #4b8df8;
+	*zoom: 1;
+}
+
+#main-nav .navigation>.nav>li>a:before, #main-nav .navigation>.nav>li>a:after
+	{
+	display: table;
+	content: "";
+	line-height: 0;
+}
+
+#main-nav .navigation>.nav>li>a:after {
+	clear: both;
+}
+
+#main-nav .navigation>.nav>li a{
+	color: #ffffFF !important;
+	font-size: 16px;
+}
+
+#main-nav .navigation>.nav>li .nav {
+	background: #034c6a;
+	border-bottom: 1px solid #4b8df8;
+	display: none;
+}
+
+#main-nav .navigation>.nav>li .nav>li>a {
+	padding: 5px;
+	border-top: 1px solid #4b8df8;
+}
+
+#main-nav .navigation>.nav>li>.nav {
+	border-right: 1px solid transparent;
+}
+
+#main-nav .navigation>.nav>li>.nav>li>a {
+	font-size: 15px;
+	padding-left: 30px;
+}
+
+
+
+#main-nav #nav-box.nav>li>a:focus{
+ text-decoration:none;
+ background-color:#081832;
+}
+
+#main-nav #nav-box.nav>li>a:hover{
+ text-decoration:none;
+ background-color:#008080;
+}
+
+#main-nav .in>li>a:focus{
+ text-decoration:none;
+ background-color:#081832;
+}
+
+#main-nav .in>li>a:hover{
+ text-decoration:none;
+ background-color:#008080;
+}
+
+#main-nav .nav_menu_item a.active {
+ text-decoration:none;
+ background-color:#081832;
+}
+
+
