@@ -2,7 +2,7 @@ var mapUtil;
 var pointSimplifierIns, markerClusterer;
 
 $(function() {
-	var key = "9a05b62190098a75f7d848ca491c33eb";
+	var key = "高德地图key";
 	mapUtil = new MapUtil();
 	mapUtil.loadJScript(key);
 });
