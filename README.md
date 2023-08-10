@@ -83,6 +83,8 @@ spring.activemq.password=admin
 
 3、elink-iov-message-processor-pro 为旗舰版协议网关上行消息处理应用程序，开发者可根据自身业务进行二次开发
 
+4、elink-iov-platform-web 为系统web端程序，配合elink-iov-message-gateway可接入车载设备注册上线，轨迹显示等，开发者可根据自身业务进行二次开发
+
 **软件运行** 
 
 1、window：双击bin/startup.bat文件即可启动；
