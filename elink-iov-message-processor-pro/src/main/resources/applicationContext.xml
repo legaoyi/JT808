@@ -90,22 +90,44 @@
        <alias alias="elink_jt808_db32t3610_2019_0102_messageHandler"  name="elink_jt808_tjsatl_2017_0102_messageHandler"/>
        <alias alias="elink_jt808_db32t3610_2019_0801_messageHandler"  name="elink_jt808_tjsatl_2017_0801_messageHandler"/>
        
-       
        <alias alias="elink_jt808_2019_db31t1409_2023_0001_messageHandler"  name="elink_jt808_2019_2019_0001_messageHandler"/>
        <alias alias="elink_jt808_2019_db31t1409_2023_0100_messageHandler"  name="elink_jt808_2019_2019_0100_messageHandler"/>
        <alias alias="elink_jt808_2019_db31t1409_2023_0102_messageHandler"  name="elink_jt808_2019_2019_0102_messageHandler"/>
        <alias alias="elink_jt808_2019_db31t1409_2023_0801_messageHandler"  name="elink_jt808_2019_2019_0801_messageHandler"/>
-       
-       <alias alias="elink_jt808_tjlysxh_2019_0001_messageHandler"  name="elink_jt808_2011_0001_messageHandler"/>
+
        <alias alias="elink_jt808_tjlysxh_2019_0100_messageHandler"  name="elink_jt808_2011_0100_messageHandler"/>
        <alias alias="elink_jt808_tjlysxh_2019_0102_messageHandler"  name="elink_jt808_2011_0102_messageHandler"/>
        <alias alias="elink_jt808_tjlysxh_2019_0200_messageHandler"  name="elink_jt808_tjsatl_2017_0200_messageHandler"/>
        <alias alias="elink_jt808_tjlysxh_2019_0704_messageHandler"  name="elink_jt808_tjsatl_2017_0704_messageHandler"/>
        <alias alias="elink_jt808_tjlysxh_2019_0801_messageHandler"  name="elink_jt808_2011_0801_messageHandler"/>
        
-       <alias alias="elink_jt808_tscsdx0001_2019_0001_messageHandler"  name="elink_jt808_2011_0001_messageHandler"/>
        <alias alias="elink_jt808_tscsdx0001_2019_0100_messageHandler"  name="elink_jt808_2011_0100_messageHandler"/>
        <alias alias="elink_jt808_tscsdx0001_2019_0102_messageHandler"  name="elink_jt808_2011_0102_messageHandler"/>
        <alias alias="elink_jt808_tscsdx0001_2019_0801_messageHandler"  name="elink_jt808_2011_0801_messageHandler"/>
+
+       <alias alias="elink_hj1239_2021_01_messageHandler"  name="elink_gb17691_2018_01_messageHandler"/>
+       <alias alias="elink_hj1239_2021_02_messageHandler"  name="elink_gb17691_2018_02_messageHandler"/>
+       
+       
+       <alias alias="elink_jt808_db45t2634_2023_0100_messageHandler"  name="elink_jt808_2011_0100_messageHandler"/>
+       <alias alias="elink_jt808_db45t2634_2023_0102_messageHandler"  name="elink_jt808_2011_0102_messageHandler"/>
+       <alias alias="elink_jt808_db45t2634_2023_0801_messageHandler"  name="elink_jt808_2011_0801_messageHandler"/>
+       
+       <alias alias="elink_jt808_db45t2634_2023_0200_messageHandler"  name="elink_jt808_db32t3610_2019_0200_messageHandler"/>
+       <alias alias="elink_jt808_db45t2634_2023_0704_messageHandler"  name="elink_jt808_db32t3610_2019_0704_messageHandler"/>
+       
+
+       <alias alias="elink_jt808_2019_tscsdx0002_2023_0100_messageHandler"  name="elink_jt808_2011_0100_messageHandler"/>
+       <alias alias="elink_jt808_2019_tscsdx0002_2023_0102_messageHandler"  name="elink_jt808_2011_0102_messageHandler"/>
+       <alias alias="elink_jt808_2019_tscsdx0002_2023_0801_messageHandler"  name="elink_jt808_2011_0801_messageHandler"/>
+       
+       <alias alias="elink_tgdrta_tscsdx0002_2021_1210_messageHandler"  name="elink_tjsatl_tjsatl_2017_1210_messageHandler"/>
+	   <alias alias="elink_tgdrta_tscsdx0002_2021_1212_messageHandler"  name="elink_tjsatl_tjsatl_2017_1212_messageHandler"/>
+	   
+       <alias alias="elink_jt808_sxtjsatl_2019_0100_messageHandler"  name="elink_jt808_2011_0100_messageHandler"/>
+       <alias alias="elink_jt808_sxtjsatl_2019_0102_messageHandler"  name="elink_jt808_2011_0102_messageHandler"/>
+       <alias alias="elink_jt808_sxtjsatl_2019_0801_messageHandler"  name="elink_jt808_2011_0801_messageHandler"/>
+       <alias alias="elink_tjsatl_sxtjsatl_2019_0210_messageHandler"  name="elink_tjsatl_tjsatl_2017_1210_messageHandler"/>
+	   <alias alias="elink_tjsatl_sxtjsatl_2019_0212_messageHandler"  name="elink_tjsatl_tjsatl_2017_1212_messageHandler"/>
        
 </beans>

@@ -15,7 +15,7 @@ public class Gb32960_2016_02_MessageHandler extends MessageHandler {
 
     @Override
     public void handle(ExchangeMessage message) throws Exception {
-       
+        logger.info("******GB32960 新能车数据,data={}", message.toString());
     }
 
 }

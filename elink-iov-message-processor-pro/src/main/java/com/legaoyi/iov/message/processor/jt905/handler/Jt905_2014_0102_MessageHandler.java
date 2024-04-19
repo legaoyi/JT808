@@ -61,7 +61,7 @@ public class Jt905_2014_0102_MessageHandler extends MessageHandler {
         respMessageHeader.put(Constants.MAP_KEY_DEVICE_SN, deviceSn);
         respMessageHeader.put(Constants.MAP_KEY_PROTOCOL, protocol);
         respMessageHeader.put(Constants.MAP_KEY_PROTOCOL_VERSION, version);
-        respMessageHeader.put(Constants.MAP_KEY_MESSAGE_ID, "8001");
+        //respMessageHeader.put(Constants.MAP_KEY_MESSAGE_ID, "8001");//不需要应答终端，不传messageId
 
         //不需要应答终端，不传messageBody
         //Map<String, Object> respMessageBody = new HashMap<String, Object>();

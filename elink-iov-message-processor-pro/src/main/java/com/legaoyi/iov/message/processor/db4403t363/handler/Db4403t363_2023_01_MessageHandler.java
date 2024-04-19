@@ -1,4 +1,4 @@
-package com.legaoyi.iov.message.processor.gb32960.handler;
+package com.legaoyi.iov.message.processor.db4403t363.handler;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,21 +13,21 @@ import com.legaoyi.iov.message.processor.handler.MessageHandler;
 import com.legaoyi.iov.message.processor.util.Constants;
 import com.legaoyi.iov.message.processor.util.ExchangeMessage;
 
-@Component(Constants.ELINK_MESSAGE_PROCESSOR_BEAN_PREFIX + "gb32960_2016_01" + Constants.ELINK_MESSAGE_PROCESSOR_MESSAGE_HANDLER_BEAN_SUFFIX)
-public class Gb32960_2016_01_MessageHandler extends MessageHandler {
-    
-    private static final Logger logger = LoggerFactory.getLogger(Gb32960_2016_01_MessageHandler.class);
-    
+@Component(Constants.ELINK_MESSAGE_PROCESSOR_BEAN_PREFIX + "db4403t363_2023_01" + Constants.ELINK_MESSAGE_PROCESSOR_MESSAGE_HANDLER_BEAN_SUFFIX)
+public class Db4403t363_2023_01_MessageHandler extends MessageHandler {
+
+    private static final Logger logger = LoggerFactory.getLogger(Db4403t363_2023_01_MessageHandler.class);
+
     @Autowired
-    public Gb32960_2016_01_MessageHandler(@Qualifier("downstreamMessageSendHandler") MessageHandler handler) {
+    public Db4403t363_2023_01_MessageHandler(@Qualifier("downstreamMessageSendHandler") MessageHandler handler) {
         setSuccessor(handler);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public void handle(ExchangeMessage message) throws Exception {
-        logger.info("******GB32960,车辆注册数据,data={}",message.toString());
-        
+        logger.info("******db4403t363,车辆注册数据,data={}", message.toString());
+
         Map<?, ?> map = (Map<?, ?>) message.getMessage();
         Map<?, ?> messageHeader = (Map<?, ?>) map.get(Constants.MAP_KEY_MESSAGE_HEADER);
         Map<String, Object> messageBody = (Map<String, Object>) map.get(Constants.MAP_KEY_MESSAGE_BODY);
@@ -35,19 +35,14 @@ public class Gb32960_2016_01_MessageHandler extends MessageHandler {
         String version = (String) messageHeader.get(Constants.MAP_KEY_PROTOCOL_VERSION);
         Map<?, ?> device = (Map<?, ?>) message.getExtAttribute(Constants.MAP_KEY_DEVICE);
 
-        int result = 0;//这里默认鉴权成功
-        
-        /**
-        if (device != null) {
-            messageBody.put("desc", "鉴权通过");
-            messageBody.put("result", result);
+        int result = 0;// 这里默认鉴权成功
 
-            protocol = (String) device.get(Constants.MAP_KEY_PROTOCOL);
-            version = (String) device.get(Constants.MAP_KEY_VERSION);
-        } else {
-            result = 2;
-            messageBody.put("desc", "鉴权失败");
-        }*/
+        /**
+         * if (device != null) { messageBody.put("desc", "鉴权通过"); messageBody.put("result", result);
+         * 
+         * protocol = (String) device.get(Constants.MAP_KEY_PROTOCOL); version = (String) device.get(Constants.MAP_KEY_VERSION); } else { result = 2;
+         * messageBody.put("desc", "鉴权失败"); }
+         */
 
         Map<String, Object> resp = new HashMap<String, Object>();
         resp.put("result", result);// 鉴权结果,0是通过鉴权,1鉴权失败
@@ -59,7 +54,7 @@ public class Gb32960_2016_01_MessageHandler extends MessageHandler {
         respMessageHeader.put(Constants.MAP_KEY_MESSAGE_ID, "01");
 
         // 应答标志，flag=1
-        Map<String, Object> attributes = new HashMap<String, Object>();
+        Map<String, Object> attributes = (Map<String, Object>) messageHeader.get("attributes");
         attributes.put("flag", result == 0 ? 1 : 2);
         respMessageHeader.put("attributes", attributes);
 
