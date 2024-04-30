@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,6 +29,10 @@ public class FileUpstreamMessageRabbitmqListener {
 
     @Value("${rabbitmq.message.durable}")
     private boolean durable = true;
+    
+    @Value("${elink.upstream.file.topic}")
+    private String fileUpstreamMessageQueue;
+
 
     @RabbitHandler
     public void onMessage(byte[] bytes) {
@@ -53,6 +58,11 @@ public class FileUpstreamMessageRabbitmqListener {
         } catch (Exception e) {
             logger.error("handle mq Message error,message={}", json, e);
         }
+    }
+    
+    @Bean("fileUpstreamMessageQueue")
+    public Queue fileUpstreamMessageQueue() {
+        return new Queue(fileUpstreamMessageQueue, durable);
     }
 
     @Bean("fileUpstreamMessageHandler")
