@@ -1,0 +1,64 @@
+<ehcache updateCheck="false">
+
+    <!-- Sets the path to the directory where cache .data files are created.
+
+         If the path is a Java System Property it is replaced by
+         its value in the running VM.
+
+         The following properties are translated:
+         user.home - User's home directory
+         user.dir - User's current working directory
+         java.io.tmpdir - Default temp file path -->
+    <diskStore path="user.dir"/>
+
+
+    <!--Default Cache configuration. These will applied to caches programmatically created through
+        the CacheManager.
+
+        The following attributes are required:
+
+        maxElementsInMemory            - Sets the maximum number of objects that will be created in memory。 
+        							   - cache 中最多可以存放的元素的数量。如果放入cache中的元素超过这个数值，有两种情况：
+        								 1、若overflowToDisk的属性值为true，会将cache中多出的元素放入磁盘文件中。
+        								 2、若overflowToDisk的属性值为false，会根据memoryStoreEvictionPolicy的策略替换cache中原有的元素。
+        eternal                        - Sets whether elements are eternal. If eternal,  timeouts are ignored and the
+                                         element is never expired.
+                            		   - 意思是是否永驻内存。如果值是true，cache中的元素将一直保存在内存中，不会因为时间超时而丢失，所以在这个值为true的时候，timeToIdleSeconds和timeToLiveSeconds两个属性的值就不起作用了。
+        overflowToDisk                 - Sets whether elements can overflow to disk when the in-memory cache
+                                         has reached the maxInMemory limit.
+                          			   - 溢出是否写入磁盘。系统会根据标签<diskStore path="java.io.tmpdir"/> 中path的值查找对应的属性值，
+                          			   	    如果系统的java.io.tmpdir的值是 D:/temp，写入磁盘的文件就会放在这个文件夹下。文件的名称是cache的名称，后缀名的data。如：CACHE_FUNC.data。
+                          			   	    注：这里是个坑，开启了缓存就会序列化磁盘，而不是溢出才写入磁盘
+        The following attributes are optional:
+        timeToIdleSeconds              - Sets the time to idle for an element before it expires.
+                                         i.e. The maximum amount of time between accesses before an element expires
+                                         Is only used if the element is not eternal.
+                                         Optional attribute. A value of 0 means that an Element can idle for infinity.
+                                         The default value is 0.
+                             		   - 就是访问这个cache中元素的最大间隔时间。如果超过这个时间没有访问这个cache中的某个元素，那么这个元素将被从cache中清除。
+        timeToLiveSeconds              - Sets the time to live for an element before it expires.
+                                         i.e. The maximum time between creation time and when an element expires.
+                                         Is only used if the element is not eternal.
+                                         Optional attribute. A value of 0 means that and Element can live for infinity.
+                                         The default value is 0.
+                                       - 这是cache中元素的生存时间。意思是从cache中的某个元素从创建到消亡的时间，从创建开始计时，当超过这个时间，这个元素将被从cache中清除。
+        diskPersistent                 - Whether the disk store persists between restarts of the Virtual Machine.
+                                         The default value is false.
+                          			   - 是否持久化磁盘缓存。当这个属性的值为true时，系统在初始化的时候会在磁盘中查找文件名为cache名称，后缀名为index的的文件，
+                          			   	    如CACHE_FUNC.index 。这个文件中存放了已经持久化在磁盘中的cache的index，找到后把cache加载到内存。要想把cache真正持久化到磁盘，写程序时必须注意，在是用net.sf.ehcache.Cache的void put (Element element)方法后要使用void flush()方法。
+        diskExpiryThreadIntervalSeconds- The number of seconds between runs of the disk expiry thread. The default value
+                                         is 120 seconds.
+                                       - 磁盘缓存的清理线程运行间隔
+        -->
+    <cache
+        name="elink_iov_cache"
+        maxElementsInMemory="100000"
+        eternal="false"
+        overflowToDisk="false"
+        timeToIdleSeconds="43200"
+        timeToLiveSeconds="86400"
+        diskPersistent="false"
+        diskExpiryThreadIntervalSeconds="43200"/>
+ 
+    <!-- See http://ehcache.sourceforge.net/documentation/#mozTocId258426 for how to configure caching for your objects -->
+</ehcache>
